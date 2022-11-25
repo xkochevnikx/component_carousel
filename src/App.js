@@ -8,12 +8,20 @@ function App() {
     { url: "https://i.ibb.co/3zWDLT0/img1.jpg", title: "ночь" },
     { url: "https://i.ibb.co/0sLyTxX/img2.jpg", title: "пёс" },
     { url: "https://i.ibb.co/4pPpKp9/img3.jpg", title: "жека" },
+    {
+      url: "https://ic.pics.livejournal.com/ls_online/34828672/500394/500394_original.jpg",
+      title: "арча",
+    },
+    {
+      url: "https://tuda-suda.net/wp-content/uploads/ala-archa-9.jpg",
+      title: "арча",
+    },
   ];
 
   const containerStyles = {
-    width: "500px",
-    height: "280px",
-    margin: "0 auto",
+    width: "700px",
+    height: "380px",
+    margin: "50px auto",
   };
 
   return (

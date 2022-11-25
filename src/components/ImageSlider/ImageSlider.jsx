@@ -41,6 +41,17 @@ const ImageSlider = ({ slides }) => {
     cursor: "pointer",
   };
 
+  const dotsContainerStyles = {
+    display: "flex",
+    justifyContent: "center",
+  };
+
+  const dotStyles = {
+    margin: "0 3px",
+    cursor: "pointer",
+    fontSize: "30px",
+  };
+
   //? условие - если текущий стейт равен 0 то что бы уйти в последнее фото в массиве - сохраняем в переменную результат вычитания общей длинны массива минус 1 и получаем последний индекс. Его записываем в стейт и открывается последнее фото в массиве.
   function goToPrevios() {
     if (currentIndex === 0) {
@@ -58,6 +69,10 @@ const ImageSlider = ({ slides }) => {
     setCurrentIndex(newIndex);
   }
 
+  function goToSlide(slideIndex) {
+    setCurrentIndex(slideIndex);
+  }
+
   return (
     <div style={sliderStyles}>
       <div style={leftArrowStyles} onClick={goToPrevios}>
@@ -69,6 +84,16 @@ const ImageSlider = ({ slides }) => {
         ❯{" "}
       </div>
       <div style={slideStyles}></div>
+      <div style={dotsContainerStyles}>
+        {slides.map((slide, slideIndex) => (
+          <div
+            key={slideIndex}
+            style={dotStyles}
+            onClick={() => goToSlide(slideIndex)}>
+            ⊗
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
